@@ -1,0 +1,525 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    VARIABLEs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    VARIABLEs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    VARIABLEs
+$mainLogoIMG: "Logos/logo-block-shop.png";
+$logoName: "Block Shop";
+$headerBoxColor: #FFDB78;
+$mainLogoIMG: "Logos/logo-block-shop.png";
+$mainHeaderIMG: "photos/product-2.png";
+$searchBoxColor: #FFFFFF;
+$searchBoxOutline: #dcdbdb;
+$searchBarIMG-static: "Icons/search-light.png";
+$searchBarIMG-transition: .2s;
+$mainHeaderIMGPercentage: 90% 100%;
+$fontOne: "Circular San";
+$buttonLeftIMG: "Icons/left-arrow.png";
+$buttonRightIMG: "Icons/right-arrow.png";
+$callToActionBTNColor: #262930;
+$callToActionTextColor: #FFFFFF;
+$floatBoxDisplayIMG-1: "photos/product-1.png";
+$floatBoxDisplayIMG-2: "photos/product-3.png";
+$floatBoxDisplayIMG-3: "photos/room-1.png";
+$floatBoxDisplayPadding: 10px;
+$starSelected: "Icons/star-rate selected.png";
+$starUnselected: "Icons/star-rate.png";
+$largeDisplayBox-1: "photos/room-2.png";
+$largeDisplayBox-2: "photos/room-3.png";
+$largeDisplayBox-3: "photos/room-4.png";
+$largeDisplayBox-W: 380px;
+$largeDisplayBox-H: 540px;
+$marginDisplayBox: 75px;
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    MIXINs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    MIXINs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    MIXINs
+// IMPORTS FONT AND GIVE EMPLY VAR
+
+@mixin customeFont01($font-family, $file-path) {
+    @font-face {
+        font-family: $font-family;
+        src: url('#{$file-path}.otf');
+    }
+}
+
+@mixin searchBoxIcon{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($searchBarIMG-static);
+    size: 23px;
+    repeat:no-repeat;
+    position: 25px;
+    }
+    clear: none;
+    position:relative;
+}
+
+@mixin searchBoxIconGrow{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($searchBarIMG-static);
+    size: 35px;
+    repeat:no-repeat;
+    position: 22px;
+    }
+    clear: none;
+    position:relative;
+}
+
+@mixin buttonLeft{
+  background: { // SCALES AND REPOSITIONS THE LEFT BUTTON
+    image: url($buttonLeftIMG);
+    size: 55px;
+    repeat:no-repeat;
+
+    }
+    float: left;
+    position:relative;
+    clear: none;
+}
+
+@mixin buttonRight{
+  background: { // SCALES AND REPOSITIONS THE LEFT BUTTON
+    image: url($buttonRightIMG);
+    size: 55px;
+    repeat:no-repeat;
+    }
+    position:relative;
+    clear: none;
+}
+
+@mixin floatBlockDisplayIMG-1{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($floatBoxDisplayIMG-1);
+    size: 227px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: both;
+    position:relative;
+}
+
+@mixin floatBlockDisplayIMG-2{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($floatBoxDisplayIMG-2);
+    size: 227px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: both;
+    position:relative;
+}
+
+@mixin floatBlockDisplayIMG-3{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($floatBoxDisplayIMG-3);
+    size: 227px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: both;
+    position:relative;
+}
+
+@mixin starSelected{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($starSelected);
+    size: 15px;
+    repeat:no-repeat;
+    }
+    clear: none;
+    position:relative;
+    object-fit:scale-down;
+}
+
+@mixin starUnselected{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($starUnselected);
+    size: 15px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: none;
+    position:relative;
+    object-fit:scale-down;
+}
+
+@mixin largeDisplayBox-1{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($largeDisplayBox-1);
+    size: 452px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: none;
+    position:relative;
+}
+
+@mixin largeDisplayBox-2{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($largeDisplayBox-2);
+    size: 452px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: none;
+    position:relative;
+}
+
+@mixin largeDisplayBox-3{
+  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+    image: url($largeDisplayBox-3);
+    size: 452px;
+    repeat:no-repeat;
+    //position: 22px;
+    }
+    clear: none;
+    position:relative;
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    DESIGN
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    DESIGN
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    DESIGN
+.frameBox { // SIMPLE CONTAINER FOR CONTENTS
+  width:1440px;
+  height: 2334px;
+  background-color: white;
+  outline: 1px solid black;
+  margin: 10px auto;
+  position:relative;
+  display: block;
+};
+
+.d_mainHeaderBox{ // THE BOX AT THE TOP OF THE STAGE
+  width: 1392px;
+  height: 774px;
+  margin:24px;
+  display: block;
+  position: relative;
+
+    background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+                  // SETS BACKGROUND COLOR FOR BOX AT TOP OF THE STAGE
+      size: 554px 585px;
+      repeat:no-repeat;
+      position:$mainHeaderIMGPercentage ;
+      color: $headerBoxColor;
+      image: url($mainHeaderIMG);
+    }
+  overflow-x: hidden;
+  object-fit:scale-down;
+  float: left;
+  clear:both;
+}
+
+
+.d_leftBlock{ // THE BOX FLOATING LEFT INSIDE d_mainHeaderBox
+              // CONTAINS LOGO - TITLE - BODY TEXT - SEARCHBOX
+  width: 507px;
+  height: 100%;
+  float: left;
+  margin-left: 190px;
+}
+
+.d_midBlock{ // CONTAINER FOR CONTENTS BELOW mainHEaderBox
+  width: 1440px;
+  height: auto;
+  float: left;
+  position: relative;
+  //background-color: orange;
+  margin-top: 120px;
+  display: block;
+}
+
+.d_floatBoxContainer{ // CONTAINER FOR MIDBLOCK CONTENT
+    width: 1125px;
+    height:inherit;
+    background-color: white;
+    margin:auto;
+}
+
+.d_floatBoxDiscription{ // CONTAINER FOR MIDBLOCK CONTENT
+    width: 262px;
+    height:inherit;
+    float:left;
+}
+
+.d_floatBoxDisplayContainer{ // CONTAINER FOR MIDBLOCK CONTENT
+    width: 227px;
+    height:inherit;
+    float:right;
+    padding-left: $floatBoxDisplayPadding;
+}
+
+.d_floatBoxDisplayIMG-1{ // CONTAINER FOR MIDBLOCK CONTENT
+    width: 227px;
+    height:225px;
+    float:right;
+    @include floatBlockDisplayIMG-1;
+    padding-bottom: 12px;
+}
+
+.d_floatBoxDisplayIMG-2{ // CONTAINER FOR MIDBLOCK CONTENT
+    width: 227px;
+    height:225px;
+    float:right;
+    @include floatBlockDisplayIMG-2;
+    padding-bottom: 12px;
+}
+
+.d_floatBoxDisplayIMG-3{ // CONTAINER FOR MIDBLOCK CONTENT
+    width: 227px;
+    height:225px;
+    float:right;
+    @include floatBlockDisplayIMG-3;
+    padding-bottom: 12px;
+}
+
+
+.d_floatBoxTitleText{
+  width: 227px;
+  height:auto;
+  padding-bottom: 12px;
+  clear: both;
+    font:{
+      font-family: CircularStd-Bold;
+      weight: bold;
+      size: 18px;
+    }
+}
+
+.d_floatDisplayBox{
+  width: 227px;
+  height:15px;
+  padding-bottom: 8px;
+  clear:both;
+
+}
+
+.starSelected{
+  width: 15px;
+  height:15px;
+  clear:none;
+  float:left;
+  @include starSelected;
+}
+.starUnselected{
+  width: 15px;
+  height:15px;
+  clear:none;
+  float:left;
+  @include starUnselected;
+}
+
+.d_floatSmallBox{
+  width: 227px;
+  height:15px;
+  padding-bottom: 8px;
+  clear:both;
+  font-size:15px;
+
+}
+
+
+.d_largeDisplayBox-1{ // IMAGE BOX WITH TEXT AT TOP
+  width: $largeDisplayBox-W;
+  height:$largeDisplayBox-H;
+  float:left;
+  margin-left: $marginDisplayBox;
+  padding-bottom: 8px;
+  clear:none;
+    @include largeDisplayBox-1;
+}
+
+.d_largeDisplayBox-2{ // IMAGE BOX WITH TEXT AT TOP
+  width: $largeDisplayBox-W;
+  height:$largeDisplayBox-H;
+  float:left;
+  margin-left: $marginDisplayBox;
+  padding-bottom: 8px;
+  clear:none;
+    @include largeDisplayBox-2;
+}
+
+.d_largeDisplayBox-3{ // IMAGE BOX WITH TEXT AT TOP
+  width: $largeDisplayBox-W;
+  height:$largeDisplayBox-H;
+  padding-bottom: 8px;
+  margin-left: $marginDisplayBox;
+  float:left;
+  clear:none;
+
+    @include largeDisplayBox-3;
+}
+
+.d_footerContainerBox{
+  color: white;
+  float: left;
+  margin-left: 42px;
+  margin-top:22px;
+  position: relative;
+  font-size: 30px;
+  @include customeFont01(CircularStd-Bold, 'Circular_Sans/CircularStd-Bold');
+}
+
+
+.d_mainHeaderBox{ // FOOTER BOX
+  width: 100%;
+  height: 774px;
+  margin:24px;
+  display: block;
+  position: relative;
+  background-color: orange;
+
+  /*  background: { // SCALES AND REPOSITIONS THE BACKGROUND IMAGE
+                  // SETS BACKGROUND COLOR FOR BOX AT TOP OF THE STAGE
+      size: 554px 585px;
+      repeat:no-repeat;
+      position:$mainHeaderIMGPercentage ;
+      color: $headerBoxColor;
+      image: url($mainHeaderIMG);
+    }*/
+  overflow-x: hidden;
+  object-fit:scale-down;
+  float: left;
+  clear:both;
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    TEXT
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    TEXT
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    TEXT
+.t_mainLogo{
+  // logo image for client
+  width:208px;
+  height: 17px;
+  background-image: url($mainLogoIMG);
+  margin-top: 45px;
+  float: left;
+  clear:both;
+}
+
+
+.t_headerTitle{ // HEADER TEXT INSIDE OF AREA AT TOP OF STAGE
+  width:507px;
+  height:160px;
+  margin-top: 135px;
+  float: left;
+  font-size: 60px;
+  clear:both;
+    @include customeFont01(CircularStd-Bold, 'Circular_Sans/CircularStd-Bold');
+}
+
+.t_headerBodyText{ // TEXT UNDER HEADER TITLE INSIDE HEADER AREA AT TOP OF STAGE
+  width:415px;
+  height:160px;
+  float: left;
+  margin-top: 26px;
+  clear:both;
+  line-height: 180%;
+    font:{
+      family: 'Source Sans Pro', sans-serif;
+      size: 20px;
+    }
+}
+
+.t_midTextHeader{ // HEADER TEXT INSIDE OF MID AREA
+  width:100%;
+  height:auto;
+  padding-bottom: 25px;
+  float: left;
+  font-size: 34px;
+  clear:both;
+    @include customeFont01(CircularStd-Bold, 'Circular_Sans/CircularStd-Bold');
+}
+
+.t_midTextBody{ // BODY TEXT INSIDE OF MID AREA
+  width:100%;
+  height:auto;
+  //margin-top: 135px;
+  padding-bottom: 35px;
+  float: left;
+  font-size: 16px;
+  clear:both;
+    @include customeFont01(CircularStd-Bold, 'Circular_Sans/CircularStd-Bold');
+}
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    BUTTONs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    BUTTONs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    BUTTONs
+.b_search input#search{  // SEARCH BOX
+  width: 442px;
+  height: 70px;
+  background: $searchBoxColor;
+  border: 1px $searchBoxOutline solid;
+  font-size: 12pt;
+  float: left;
+  color: #262626;
+  padding-left: 60px;
+  @include searchBoxIcon;
+
+
+    transition: background $searchBarIMG-transition ease-in-out;
+   -webkit-transition: background $searchBarIMG-transition ease-in-out;
+   -moz-transition: background $searchBarIMG-transition ease-in-out;
+   -ms-transition: background $searchBarIMG-transition ease-in-out;
+   -o-transition: background $searchBarIMG-transition ease-in-out;
+
+}
+
+.b_search .icon{  // MAGNIFYING GLASS IMAGE INSIDE OF SEARCH BOX
+  float:left;
+  margin:35px 0px 0px 20px;
+  z-index: 1;
+
+  @include searchBoxIcon;
+
+}
+.b_search input#search:hover{  // MAGNIFYING GLASS TRANSITIONS - SCALES
+
+    @include searchBoxIconGrow;
+  }
+
+.b_leftRightContainer{
+  width: 135px;
+  height: 55px;
+  padding-bottom:64px;
+  clear: both;
+}
+
+.b_leftButton{
+  width: 55px;
+  height: inherit;
+  clear:none;
+  opacity: 50%;
+  @include buttonLeft;
+    &:hover{
+      opacity:100%;
+    }
+
+}
+
+.b_rightButton{
+  width: 55px;
+  height: inherit;
+  float:right;
+  clear:none;
+  opacity: 50%;
+  @include buttonRight;
+    &:hover{
+      opacity:100%;
+    }
+
+}
+
+.b_callToAction{
+  width: 215px;
+  height: 55px;
+  background-color: $callToActionBTNColor;
+  float:left;
+  clear:none;
+    font{
+      family: $fontOne;
+      size:30px;
+    }
+    color: $callToActionTextColor;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 55px;
+}
